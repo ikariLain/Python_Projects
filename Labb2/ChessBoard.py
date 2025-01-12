@@ -22,8 +22,6 @@ def harderMethod():
     print("Press max size 64")
     size = input("Enter board size:")
     
-    
-    
     if int(size) > 64:
         print("Size too large, max size 64")
         return
