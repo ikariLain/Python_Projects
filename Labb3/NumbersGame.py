@@ -10,7 +10,7 @@ def deafult():
 
     for attempt in range(tries):
     
-        user_input = int(input(f"Attempt {attempt + 1}/{tries}: Enter your number: "))
+        user_input = int(input(f"\nAttempt {attempt + 1}/{tries}: Enter your number: "))
     
         if user_input == easy_random:
             print("Congratulations! You guessed it!")
@@ -44,21 +44,21 @@ def pick_your_number():
     
     #Depending on the user input get an extra message    
     def variation_respone(user_input):
-        if (user_input - rank2_random) <=10:
-            return("\nWow! your real close You are close!")
+        if (user_input - rank2_random) <=5:
+            return("Wow! your real close You are close!")
             
-        elif (user_input - rank2_random) <=20:
-            return("\nYou are within you are getting closer!")
+        elif (user_input - rank2_random) <=10:
+            return("You are within you are getting closer!")
             
         elif (user_input - rank2_random) <=60:
-            return("\nYou can do better!  :)  ")
+            return("You can do better!  :)  ")
             
         else:
             return("\nYou are not even close!  :/  ")
 
     for attempt  in range(tries):
     
-        user_input = int(input(f"Attempt {attempt + 1}/{tries}: Enter your number"))
+        user_input = int(input(f"\nAttempt {attempt + 1}/{tries}: Enter your number: "))
     
         if user_input == rank2_random:
             print("\nCongratulations! You guessed it!")
@@ -66,17 +66,16 @@ def pick_your_number():
             break
             
         elif user_input < rank2_random:
-            print("\nToo low! Try again.")
-            print(variation_respone(user_input))
+            print(f"\nToo low! Try again {variation_respone(user_input)}")
         
         else:
-            print("\nYour number is too high! Try again.")
-            print(variation_respone(user_input))
+            print(f"\nYour number is too high! Try again {variation_respone(user_input)}")
             
     # Failed messages
     else:
-        print("\nSorry, you didn't guess it. The number was", rank2_random)
+        print(f"\nSorry, you didn't guess it. The number was {rank2_random}")
         
+#Switch function
 def switch(choice):
     
     switch = {
@@ -85,6 +84,27 @@ def switch(choice):
     }
     return switch.get(choice, deafult)()
 
-print("Welcome to guess the number!")
-choice = int(input("Enter your choice"))
-print(switch(choice))
+#Main function
+def Main():
+    while True:
+        print("Welcome to guess the number!")
+        print("1. Easy mode")
+        print("2. Pick your own number")
+        print("3. Exit")
+        
+        choice = int(input("\nEnter your choice: "))
+        if choice == 1 or choice == 2:
+            print(switch(choice))
+        elif choice == 3:
+            print("\nThank you for playing!")
+            break
+        else:
+            print("\nInvalid input, please try again")
+
+        play_again = input("\nDo you want to play again? (y/n): ")
+        if play_again.lower() != "y":
+            print("\nThank you for playing!")
+            break
+        
+#Start the game
+Main()
