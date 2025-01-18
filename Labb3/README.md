@@ -128,7 +128,3 @@ This assignment is graded and is grade-foundational but upcoming assignments wil
 The assignment is graded with F or P and if you get F you need to complement the assignment by working further on it and completing it.
 
 You cannot get VG on this assignment even though one of the objectives being tested has a VG level. This is because there is no VG component in the assignment and it will instead be tested in later assignments.
-
-Below you can see the course objectives in the syllabus that are tested in this assignment.
-
-[Untitled](https://www.notion.so/796be14d851247aa8f54d3f79cd86dc9?pvs=21)
